@@ -11,7 +11,7 @@ export class ProductListComponent implements OnInit {
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
-    listFilter: string = '';
+    
     products: IProduct[] = [
         {
             "productId": 1,
@@ -34,6 +34,14 @@ export class ProductListComponent implements OnInit {
             "imageUrl": "assets/images/garden_cart.png"
         }
     ];
+
+    _listFilter: string = '';
+    get listFilter(): string {
+        return this._listFilter;
+    }
+    set listFilter(str: string) {
+        this._listFilter = str;
+    }
 
     toggleImage(): void {
         this.showImage = !this.showImage;
